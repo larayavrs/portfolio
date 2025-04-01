@@ -1,3 +1,7 @@
+---
+import "@/styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,9 +9,15 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>larayavrs</title>
   </head>
   <body>
-    <slot />
+    <div class="flex h-fit min-h-screen flex-col gap-y-6">
+      <main class="grow">
+        <div class="mx-auto flex grow flex-col gap-y-6 px-4">
+          <slot />
+        </div>
+      </main>
+    </div>
   </body>
 </html>
