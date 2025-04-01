@@ -13,6 +13,7 @@
     "@astrojs/mdx": "^4.2.3",
     "@astrojs/react": "^4.2.3",
     "@astrojs/sitemap": "^3.3.0",
+    "@iconify-json/lucide": "^1.2.34",
     "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/vite": "^4.0.17",
     "@types/react": "^19.0.12",
