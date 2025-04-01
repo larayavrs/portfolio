@@ -15,22 +15,22 @@ import { cn } from "@/lib/utils";
     class="flex flex-col items-center justify-center gap-y-4 text-center"
   >
     <div class="max-w-md">
-      <h1 class="mb-4 text-2xl font-medium">
+      <h1 class="mb-4 text-4xl font-medium">
         The page you are looking for was not found
       </h1>
-      <p class="text-muted-foreground prose">
+      <p class="prose text-muted-foreground">
         The page you are looking for might have been removed, had its name
         changed, or is temporarily unavailable.
       </p>
-      <Link
-        href="/"
-        class={cn(buttonVariants({ variant: "outline" }), "flex gap-x-1 group")}
-      >
-        <span class="transition-transform group-hover:-translate-x-1">
-          &larr;
-        </span>
-        Go to homepage
-      </Link>
     </div>
+    <Link
+      href="/"
+      class={cn(buttonVariants({ variant: "outline" }), "flex gap-x-1.5 group")}
+    >
+      <span class="transition-transform group-hover:-translate-x-1">
+        &larr;
+      </span>
+      Go to homepage
+    </Link>
   </section>
 </Layout>
