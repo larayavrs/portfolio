@@ -1,0 +1,24 @@
+---
+import { website } from "@/constants";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = website.title, description = website.brief } = Astro.props;
+const image = new URL("/static/bg-display.png", Astro.site);
+---
+
+<title>{`${title} | ${website.title}`}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={website.href} />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:image:alt" content={title} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content={website.locale} />
+<meta property="og:site_name" content={website.title} />
+<meta property="og:url" content={Astro.url} />
