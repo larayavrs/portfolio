@@ -5,7 +5,7 @@
 
 @theme inline {
   --font-sans:
-    Geist Mono, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    Geist, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono:
     Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -172,6 +172,14 @@
 @font-face {
   font-family: "Geist Mono";
   src: url("/fonts/GeistMono.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/GeistVF.woff2") format("woff2-variations");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;

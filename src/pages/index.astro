@@ -4,7 +4,17 @@ import { Button } from "@/components/ui/button";
 ---
 
 <Layout>
-  <h1 class="text-3xl">Test</h1>
-  <p class="text-lg">This is a test page.</p>
-  <Button>Click me</Button>
+  <div
+    class="flex flex-col items-center justify-center min-h-screen text-center"
+  >
+    <h1 class="text-2xl font-extrabold text-zinc-800 mb-4">
+      🚧 Under Construction 🚧
+    </h1>
+    <p class="text-lg text-zinc-600 mb-6">
+      We're working hard to bring this page to life. Stay tuned!
+    </p>
+    <Button asChild>
+      <a href="/" class="px-6 py-3"> Go Back Home </a>
+    </Button>
+  </div>
 </Layout>
