@@ -28,3 +28,22 @@ export const navigation: SocialHref[] = [
     label: "contact",
   },
 ];
+
+export const socials: SocialHref[] = [
+  {
+    href: "https://github.com/larayavrs",
+    label: "GitHub",
+  },
+  {
+    href: "https://instagram.com/leoosdk",
+    label: "Instagram",
+  },
+  {
+    href: "mailto:larayavrs@gmail.com",
+    label: "Email",
+  },
+  {
+    href: "/rss.xml",
+    label: "RSS",
+  },
+];
