@@ -47,3 +47,10 @@ export const socials: SocialHref[] = [
     label: "RSS",
   },
 ];
+
+export const icons: IconMap = {
+  github: "lucide:github",
+  instagram: "lucide:instagram",
+  email: "lucide:mail",
+  rss: "lucide:rss",
+};
