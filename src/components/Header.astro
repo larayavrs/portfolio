@@ -1,6 +1,7 @@
 ---
 import Link from "@/components/Link.astro";
-import { website } from "@/constants";
+import ThemeSwitch from "@/components/ThemeSwitch.astro";
+import { navigation, website } from "@/constants";
 import { Image } from "astro:assets";
 
 import logo from "../../public/static/logo.png";
@@ -13,9 +14,25 @@ import logo from "../../public/static/logo.png";
   <div
     class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-4 p-3"
   >
-    <Link href="/" class="flex shrink-0 items-center gap-2 text-xl font-medium">
-      <Image src={logo} alt="larayavrs" class="size-8" />
+    <Link href="/" class="flex shrink-0 items-center gap-2 text-lg font-medium">
+      <Image src={logo} alt="larayavrs" class="size-9" />
       {website.title}
     </Link>
+    <div class="flex items-center gap-2 md:gap-4">
+      <nav class="hidden items-center gap-4 text-sm sm:gap-6 md:flex">
+        {
+          navigation.map((item) => (
+            <Link
+              href={item.href}
+              class="text-foreground/60 hover:text-foreground/90 capitalize transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))
+        }
+      </nav>
+      <!-- Here goes the mobile menu client -->
+      <ThemeSwitch transition:persist />
+    </div>
   </div>
 </header>
