@@ -1,8 +1,8 @@
 ---
 import Link from "@/components/Link.astro";
 import { buttonVariants } from "@/components/ui/button";
-import type { SocialHref } from "@/types";
 import { icons } from "@/constants";
+import type { SocialHref } from "@/types";
 
 import { Icon } from "astro-icon/components";
 
@@ -24,7 +24,13 @@ const { links } = Astro.props;
           class={buttonVariants({ variant: "outline", size: "icon" })}
           external
         >
-            <Icon name={icons[label as keyof typeof icons]} || 'lucide:message-circle-question' class="size-5"/>
+          <Icon
+            name={
+              icons[label as keyof typeof icons] ||
+              "lucide:message-circle-question"
+            }
+            class="size-5"
+          />
         </Link>
       </li>
     ))
