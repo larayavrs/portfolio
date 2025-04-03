@@ -1,23 +1,17 @@
 ---
-import { Separator } from "@/components/ui/separator";
 import { socials } from "@/constants";
-import { Image } from "astro:assets";
 import SocialsIcon from "./SocialsIcon.astro";
-
-import astroLogo from "../public/static/astro.svg";
 ---
 
 <footer class="py-4">
   <div
     class="mx-auto flex max-w-3xl flex-col items-center justify-center gap-y-2 px-4 sm:flex-row sm:justify-between"
   >
-    <span class="text-muted-foreground text-sm">
-      &copy; {new Date().getFullYear()} larayavrs. Todos los derechos reservados
-    </span>
-    <Separator orientation="vertical" className="hidden h-4! sm:block" />
-    <p class="text-muted-foreground text-sm">
-      Desarrollado con <Image src={astroLogo} alt="Astro logo" class="size-4" />
-    </p>
+    <div class="flex flex-wrap items-center justify-center gap-x-2 text-center">
+      <span class="text-muted-foreground text-sm">
+        &copy; {new Date().getFullYear()} larayavrs. Todos los derechos reservados
+      </span>
+    </div>
+    <SocialsIcon links={socials} />
   </div>
-  <SocialsIcon links={socials} />
 </footer>
