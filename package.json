@@ -1,7 +1,11 @@
 {
   "name": "leo-portfolio",
+  "description": "My personal portfolio written in Astrods",
   "type": "module",
   "version": "0.0.1",
+  "license": "MIT",
+  "author": "larayavrs",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
