@@ -9,7 +9,7 @@ import {
 import { navigation } from "@/constants";
 import { Menu } from "lucide-react";
 
-export const MobileMenu = () => {
+const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const handleViewTransitStart = () => {
@@ -50,3 +50,5 @@ export const MobileMenu = () => {
     </DropdownMenu>
   );
 };
+
+export default MobileMenu;
