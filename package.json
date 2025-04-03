@@ -27,6 +27,7 @@
     "@types/react-dom": "^19.0.4",
     "astro": "^5.5.5",
     "astro-icon": "^1.1.5",
+    "bootstrap-icons": "^1.11.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.486.0",
