@@ -6,6 +6,7 @@ export type Website = {
   brief: string;
   href: string;
   author: string;
+  fullname: string;
   locale: string;
   postsPerPage: number;
   howManyFeaturedPosts: number;

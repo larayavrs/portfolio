@@ -5,6 +5,7 @@ export const website: Website = {
   brief: "A powerful portfolio used for my personal projects and experiments.",
   href: "https://larayavrs.vercel.app",
   author: "larayavrs",
+  fullname: "Leo Araya",
   locale: "es-ES",
   howManyFeaturedPosts: 3,
   postsPerPage: 4,
@@ -17,15 +18,15 @@ export const navigation: SocialHref[] = [
   },
   {
     href: "/projects",
-    label: "projects",
+    label: "proyectos",
   },
   {
     href: "/about",
-    label: "about",
+    label: "Acerca",
   },
   {
     href: "/contact",
-    label: "contact",
+    label: "Contacto",
   },
 ];
 
