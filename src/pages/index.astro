@@ -1,16 +1,57 @@
 ---
+import Link from "@/components/Link.astro";
+import PageHeading from "@/components/PageHeading.astro";
+import { buttonVariants } from "@/components/ui/button";
+import { website } from "@/constants";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="mt-7 flex flex-col items-center justify-center">
-    <h1 class="text-foreground dark:text-secondary-foreground mb-4 text-2xl">
-      Estamos en desarrollo
-    </h1>
-    <p
-      class="text-md text-muted-foreground dark:text-secondary-foreground mb-6"
-    >
-      Actualmente me encuentro desarrollando mi portafolio personal.
-    </p>
-  </div>
+  <PageHeading slot="head" title="Inicio" />
+  <section>
+    <div>
+      <div class="flex flex-col space-y-1.5 p-6">
+        <h3 class="font-mono text-2xl leading-none">
+          {website.author}
+        </h3>
+        <p class="text-muted-foreground text-sm">
+          {website.fullname} &bull; <span class="font-medium"
+            >Desarrollador Software</span
+          >
+        </p>
+      </div>
+      <div class="p-6 pt-0">
+        <p class="text-muted-foreground mb-2 text-sm">
+          Bienvenido/a a mi portafolio personal. Aquí encontrarás una selección
+          de mis proyectos y trabajos más destacados. Mi objetivo es mostrarte
+          mis habilidades y experiencia en el desarrollo de software, así como
+          mi pasión por la tecnología y la innovación.
+        </p>
+        <p class="text-muted-foreground text-sm">
+          Si gustas conocerme mas a fondo, no dudes en visitar mis redes
+          sociales o también puedes dirigirte a la seccion <Link
+            href="/about"
+            class="text-foreground hover:text-foreground/80 font-bold"
+            underline
+            external>Sobre mi</Link
+          >
+          para indicarte un poco mas sobre mi trayectoria y mas detalles.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col gap-y-4">
+    <h2 class="text-2xl font-medium">Ultimos posts</h2>
+    <div class="flex justify-center">
+      <Link
+        href="/blog"
+        class={buttonVariants({ variant: "ghost" }) + " group"}
+      >
+        Ver todos los posts <span
+          class="ml-1.5 transition-transform group-hover:translate-x-1"
+          >&rarr;</span
+        >
+      </Link>
+    </div>
+  </section>
 </Layout>
