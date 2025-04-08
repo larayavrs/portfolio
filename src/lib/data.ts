@@ -73,6 +73,19 @@ export function postsByYear(
   );
 }
 
+export function postsByMonth(
+  posts: CollectionEntry<"post">[],
+): Record<string, CollectionEntry<"post">[]> {
+  return posts.reduce(
+    (acc: Record<string, CollectionEntry<"post">[]>, post) => {
+      const month = post.data.date.toLocaleString("default", { month: "long" });
+      (acc[month] ??= []).push(post);
+      return acc;
+    },
+    {},
+  );
+}
+
 export async function postsByTag(
   tag: string,
 ): Promise<CollectionEntry<"post">[]> {
