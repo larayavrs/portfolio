@@ -1,9 +1,13 @@
 ---
 import Link from "@/components/Link.astro";
 import PageHeading from "@/components/PageHeading.astro";
+import PostCard from "@/components/PostCard.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { website } from "@/constants";
+import { getRecentPosts } from "@/lib/data";
 import Layout from "../layouts/Layout.astro";
+
+const posts = await getRecentPosts(website.howManyFeaturedPosts);
 ---
 
 <Layout>
@@ -42,6 +46,15 @@ import Layout from "../layouts/Layout.astro";
   </section>
   <section class="flex flex-col gap-y-4">
     <h2 class="text-2xl font-medium">Ultimos posts</h2>
+    <ul class="flex flex-col gap-y-4">
+      {
+        posts.map((post) => (
+          <li>
+            <PostCard post={post} />
+          </li>
+        ))
+      }
+    </ul>
     <div class="flex justify-center">
       <Link
         href="/blog"
