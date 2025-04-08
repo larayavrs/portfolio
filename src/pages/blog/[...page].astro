@@ -1,0 +1,51 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import PageHeading from "@/components/PageHeading.astro";
+import PostCard from "@/components/PostCard.astro";
+import { website } from "@/constants";
+import Layout from "@/layouts/Layout.astro";
+import { getAllPosts, postsByMonth } from "@/lib/data";
+import type { PaginateFunction } from "astro";
+
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: PaginateFunction;
+}) {
+  const allPosts = await getAllPosts();
+  return paginate(allPosts, { pageSize: website.postsPerPage });
+}
+
+const { page } = Astro.props;
+
+const getPostsByMonth = postsByMonth(page.data);
+const months = Object.keys(getPostsByMonth).sort(
+  (a, b) => parseInt(b) - parseInt(a),
+);
+---
+
+<Layout>
+  <PageHeading slot="head" title="Blog" />
+  <Breadcrumbs
+    items={[
+      { label: "Blog", href: "/blog", icon: "lucide:book" },
+      { label: `Pagina ${page.currentPage}`, icon: "lucide:folder-open" },
+    ]}
+  />
+  <div class="flex min-h-[calc(100vh-18rem)] flex-col gap-y-10">
+    {
+      months.map((month) => (
+        <section class="flex flex-col gap-y-4">
+          <div class="font-mono font-extrabold">{month}</div>
+          <ul class="flex flex-col gap-6">
+            {getPostsByMonth[month].map((post) => (
+              <li>
+                <PostCard post={post} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</Layout>
