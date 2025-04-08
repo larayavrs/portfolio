@@ -35,3 +35,47 @@ export async function getAllProjects(): Promise<CollectionEntry<"projects">[]> {
     return bdate - adate;
   });
 }
+
+export async function getAllTags(): Promise<Map<string, number>> {
+  const posts = await getAllPosts();
+  return posts.reduce((acc, post) => {
+    post.data.tags?.forEach((tag) => {
+      acc.set(tag, (acc.get(tag) || 0) + 1);
+    });
+    return acc;
+  }, new Map<string, number>());
+}
+
+export async function getSortedTags(): Promise<
+  { tag: string; count: number }[]
+> {
+  const tags = await getAllTags();
+  return [...tags.entries()]
+    .map(([tag, count]) => ({ tag, count }))
+    .sort((a, b) => {
+      const countDifference = b.count - a.count;
+      return countDifference !== 0
+        ? countDifference
+        : a.tag.localeCompare(b.tag);
+    });
+}
+
+export function postsByYear(
+  posts: CollectionEntry<"post">[],
+): Record<string, CollectionEntry<"post">[]> {
+  return posts.reduce(
+    (acc: Record<string, CollectionEntry<"post">[]>, post) => {
+      const year = post.data.date.getFullYear().toString();
+      (acc[year] ??= []).push(post);
+      return acc;
+    },
+    {},
+  );
+}
+
+export async function postsByTag(
+  tag: string,
+): Promise<CollectionEntry<"post">[]> {
+  const posts = await getAllPosts();
+  return posts.filter((post) => post.data.tags?.includes(tag));
+}
