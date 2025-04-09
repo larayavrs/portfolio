@@ -1,0 +1,40 @@
+---
+import { website } from "@/constants";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"post">;
+}
+
+const { post } = Astro.props;
+
+const title = post.data.title || website.title;
+const description = post.data.description || website.brief;
+const image = new URL("/static/bg-display.png", Astro.site);
+// TODO: add author field in the future
+---
+
+<title>{`${title} | ${website.title}`}</title>
+<meta name="title" content={`${title} | ${website.title}`} />
+<meta name="description" content={description} />
+<link rel="canonical" href={website.href} />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta
+  property="og:image"
+  content={`${website.href}${post?.data?.image?.src}` || image}
+/>
+<meta property="og:image:alt" content={title} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content={website.locale} />
+<meta property="og:site_name" content={website.title} />
+<meta property="og:url" content={Astro.url} />
+<!-- TODO: <meta property="og:author" content={author} /> -->
+
+{
+  post?.data.tags &&
+    post.data.tags.map((tag: string) => {
+      return <meta property="article:tag" content={tag} />;
+    })
+}
