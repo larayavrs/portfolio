@@ -1,0 +1,112 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import PostHeading from "@/components/PostHeading.astro";
+import PostNavigate from "@/components/PostNavigate.astro";
+import Toc from "@/components/Toc.astro";
+import { badgeVariants } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import Layout from "@/layouts/Layout.astro";
+import { getAdjacentPosts, getAllPosts } from "@/lib/data";
+import { formatDate, getReadingTime } from "@/lib/utils";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import { render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const currentPostId = Astro.params.id;
+const { Content, headings } = await render(post);
+const { next, prev } = await getAdjacentPosts(currentPostId);
+---
+
+<Layout isWide>
+  <PostHeading slot="head" post={post} />
+  <section
+    class="grid grid-cols-[minmax(0px,1fr)_min(calc(var(--breakpoint-md)-2rem),100%)_minmax(0px,1fr)] gap-y-6"
+  >
+    <div class="col-start-2">
+      <Breadcrumbs
+        items={[
+          { href: "/blog", label: "Blog", icon: "lucide:archive" },
+          { label: post.data.title, icon: "lucide:file-text" },
+        ]}
+      />
+    </div>
+    {
+      post.data.image && (
+        <Image
+          src={post.data.image}
+          alt={post.data.title}
+          width={1100}
+          height={600}
+          class="col-span-full mx-auto w-full max-w-5xl object-cover"
+        />
+      )
+    }
+    <section class="col-start-2 flex flex-col gap-y-6 text-center">
+      <div class="flex flex-col">
+        <h1
+          class="mb-2 text-3xl leading-tight font-medium text-pretty sm:text-5xl"
+        >
+          {post.data.title}
+        </h1>
+        <div
+          class="text-muted-foreground mb-4 flex flex-wrap items-center justify-center gap-3 text-sm"
+        >
+          <div class="flex items-center gap-2">
+            <span>{formatDate(post.data.date)}</span>
+            <Separator orientation="vertical" className="h-4!" />
+            <span>{getReadingTime(post.body!)}</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-2">
+          {
+            post.data.tags && post.data.tags.length > 0 ? (
+              post.data.tags.map((tag) => (
+                <a
+                  href={`/tags/${tag}`}
+                  class={badgeVariants({ variant: "secondary" })}
+                >
+                  <Icon name="lucide:hash" class="size-4" />
+                  {tag}
+                </a>
+              ))
+            ) : (
+              <span class="text-muted-foreground text-sm">
+                No hay etiquetas asignadas
+              </span>
+            )
+          }
+        </div>
+      </div>
+      <PostNavigate prevPost={prev} nextPost={next} />
+    </section>
+    {headings.length > 0 && <Toc headings={headings} />}
+    <article class="prose col-start-2 max-w-none">
+      <Content />
+    </article>
+    <PostNavigate prevPost={prev} nextPost={next} />
+  </section>
+
+  <Button
+    variant="outline"
+    size="icon"
+    className="group fixed right-8 bottom-8 z-50 hidden"
+    id="scroll-to-top"
+    title="Volver arriba"
+    aria-label="Volver arriba"
+  >
+    <Icon
+      name="lucide:arrow-up"
+      class="mx-auto size-4 transition-all group-hover:-translate-y-0.5"
+    />
+  </Button>
+</Layout>

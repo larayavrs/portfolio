@@ -13,8 +13,8 @@ export const website: Website = {
 
 export const navigation: SocialHref[] = [
   {
-    href: "/blog",
-    label: "blog",
+    href: "/post",
+    label: "posts",
   },
   {
     href: "/projects",
