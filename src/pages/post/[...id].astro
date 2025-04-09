@@ -109,4 +109,27 @@ const { next, prev } = await getAdjacentPosts(currentPostId);
       class="mx-auto size-4 transition-all group-hover:-translate-y-0.5"
     />
   </Button>
+
+  <script>
+    document.addEventListener("astro:page-load", () => {
+      const scrollToTopBtn = document.getElementById("scroll-to-top");
+      const footer = document.querySelector("footer");
+
+      if (scrollToTopBtn && footer) {
+        scrollToTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        window.addEventListener("scroll", () => {
+          const footerRect = footer.getBoundingClientRect();
+          const isFooterVisible = footerRect.top <= window.innerHeight;
+
+          scrollToTopBtn.classList.toggle(
+            "hidden",
+            window.scrollY <= 300 || isFooterVisible,
+          );
+        });
+      }
+    });
+  </script>
 </Layout>
