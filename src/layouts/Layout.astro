@@ -4,6 +4,7 @@ import "@/styles/global.css";
 import "@/styles/typography.css";
 
 import Footer from "@/components/Footer.astro";
+import Head from "@/components/Head.astro";
 import Header from "@/components/Header.astro";
 
 const { isWide = false } = Astro.props;
@@ -11,13 +12,9 @@ const { isWide = false } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>larayavrs</title>
-  </head>
+  <Head>
+    <slot name="head" />
+  </Head>
   <body>
     <div class="flex h-fit min-h-screen flex-col gap-y-6 font-sans">
       <Header />
