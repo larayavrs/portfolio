@@ -21,6 +21,7 @@ import { pluginCollapsibleSections } from "@expressive-code/plugin-collapsible-s
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 
 export default defineConfig({
+  site: "https://larayavrs.vercel.app",
   vite: {
     plugins: [tailwindcss()],
   },
