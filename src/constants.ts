@@ -2,7 +2,7 @@ import type { IconMap, SocialHref, Website } from "@/types";
 
 export const website: Website = {
   title: "larayavrs",
-  brief: "A powerful portfolio used for my personal projects and experiments.",
+  brief: "My powerful portfolio used for my personal projects and experiments.",
   href: "https://larayavrs.vercel.app",
   author: "larayavrs",
   fullname: "Leo Araya",
@@ -36,7 +36,7 @@ export const socials: SocialHref[] = [
     label: "GitHub",
   },
   {
-    href: "https://instagram.com/leoosdk",
+    href: "https://instagram.com/v22leo",
     label: "Instagram",
   },
   {
