@@ -1,0 +1,48 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import PageHeading from "@/components/PageHeading.astro";
+import PostCard from "@/components/PostCard.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getAllTags, postsByTag } from "@/lib/data";
+
+export async function getStaticPaths() {
+  const tagMap = await getAllTags();
+  const uniqueTags = Array.from(tagMap.keys());
+
+  return Promise.all(
+    uniqueTags.map(async (tag) => {
+      const posts = await postsByTag(tag);
+      return {
+        params: { id: tag },
+        props: { tag, posts },
+      };
+    }),
+  );
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<Layout class="max-w-3xl">
+  <PageHeading
+    slot="head"
+    title={`Publicaciones sobre: ${tag}`}
+    description={`Todas las publicaciones relacionadas con ${tag}`}
+  />
+  <Breadcrumbs
+    items={[
+      { href: "/tags", label: "Tags", icon: "lucide:tag" },
+      { label: tag, icon: "lucide:tag" },
+    ]}
+  />
+
+  <ul class="flex flex-col gap-y-4">
+    {
+      posts.map((post) => (
+        <li>
+          <PostCard post={post} />
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
