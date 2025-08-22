@@ -5,7 +5,7 @@ export const website: Website = {
   brief: "My powerful portfolio used for my personal projects and experiments.",
   href: "https://larayavrs.vercel.app",
   author: "larayavrs",
-  fullname: "Leo Araya",
+  fullname: "Leandro Araya",
   locale: "es-ES",
   howManyFeaturedPosts: 3,
   postsPerPage: 4,
