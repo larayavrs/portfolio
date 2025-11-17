@@ -1,0 +1,27 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import PageHeading from "@/components/PageHeading.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getAllProjects } from "@/lib/data";
+
+const projects = await getAllProjects();
+---
+
+<Layout class="max-w-3xl">
+  <PageHeading slot="head" title="Proyectos" />
+  <Breadcrumbs items={[{ label: "Proyectos", icon: "lucide:book" }]} />
+  {
+    projects.length > 0 ? (
+      <ul class="flex flex-col gap-4">
+        {projects.map((project) => (
+          <li>
+            <ProjectCard project={project} />
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>No hay proyectos disponibles</p>
+    )
+  }
+</Layout>

@@ -1,4 +1,4 @@
-import { website } from "@/constants";
+import { website } from "@/constants/constants";
 import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
 import { getAllPosts } from "@/lib/data";

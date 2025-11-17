@@ -2,7 +2,7 @@
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import PageHeading from "@/components/PageHeading.astro";
 import PostCard from "@/components/PostCard.astro";
-import { website } from "@/constants";
+import { website } from "@/constants/constants";
 import Layout from "@/layouts/Layout.astro";
 import { getAllPosts, postsByMonth } from "@/lib/data";
 import type { PaginateFunction } from "astro";
@@ -28,7 +28,7 @@ const months = Object.keys(getPostsByMonth).sort(
   <PageHeading slot="head" title="Blog" />
   <Breadcrumbs
     items={[
-      { label: "Blog", href: "/blog", icon: "lucide:book" },
+      { label: "Posts", href: "/post", icon: "lucide:book" },
       { label: `Pagina ${page.currentPage}`, icon: "lucide:folder-open" },
     ]}
   />

@@ -9,18 +9,18 @@ import { cn } from "@/lib/utils";
 
 <Layout>
   <PageHeading slot="heading" title="404" />
-  <Breadcrumbs items={[{ label: "Woops", icon: "lucide:circle-help" }]} />
+  <Breadcrumbs items={[{ label: "Oops", icon: "lucide:circle-help" }]} />
 
   <section
     class="flex flex-col items-center justify-center gap-y-4 text-center"
   >
     <div class="max-w-md">
       <h1 class="mb-4 text-4xl font-medium">
-        The page you are looking for was not found
+        La página que estas buscando no existe
       </h1>
       <p class="prose text-muted-foreground">
-        The page you are looking for might have been removed, had its name
-        changed, or is temporarily unavailable.
+        Al parecer no pudimos encontrar la página que estas buscando pero puedes
+        volver al inicio.
       </p>
     </div>
     <Link
@@ -30,7 +30,7 @@ import { cn } from "@/lib/utils";
       <span class="transition-transform group-hover:-translate-x-1">
         &larr;
       </span>
-      Go to homepage
+      Volver al inicio
     </Link>
   </section>
 </Layout>

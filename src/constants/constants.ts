@@ -21,10 +21,6 @@ export const navigation: SocialHref[] = [
     label: "proyectos",
   },
   {
-    href: "/about",
-    label: "Acerca",
-  },
-  {
     href: "/contact",
     label: "Contacto",
   },
@@ -36,7 +32,7 @@ export const socials: SocialHref[] = [
     label: "GitHub",
   },
   {
-    href: "https://instagram.com/v22leo",
+    href: "https://instagram.com/versa2ile",
     label: "Instagram",
   },
   {
@@ -50,7 +46,7 @@ export const socials: SocialHref[] = [
 ];
 
 export const icons: IconMap = {
-  Github: "lucide:github",
+  GitHub: "lucide:github",
   Instagram: "lucide:instagram",
   Email: "lucide:mail",
   RSS: "lucide:rss",

@@ -18,5 +18,5 @@ export function getReadingTime(html: string) {
   const words = text.split(/\s+/).length;
   // Assuming an average reading speed of 200 words per minute (adjust as needed)
   const readingTime = (words / 200 + 1).toFixed();
-  return `${readingTime} minutos de lectura`;
+  return `${readingTime} minuto/s de lectura`;
 }

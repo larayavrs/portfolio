@@ -1,0 +1,73 @@
+---
+title: 'Mi experiencia con Golang y Bubbletea'
+description: 'Creo que me enamoré de Bubbletea'
+date: 2025-08-23
+tags: ['desarrollo', 'golang', 'bubbletea']
+image: './bg-display.png'
+authors: ['larayavrs']
+---
+
+## ¿Cómo me enamoré de Bubbletea?
+
+Bubbletea es un framework de Go que se utiliza para crear interfaces de
+comando-line-interface (CLI). Me enamoré de Bubbletea cuando estaba aprendiendo
+Go y Bubbletea era la herramienta perfecta para crear interfaces de
+comando-line-interface (CLI).
+
+Me gustaba la manera en que Bubbletea manejaba los eventos y la manera en que
+la interfaz de usuario se actualizaba. Tambien me encantaba la manera en que
+Bubbletea permitia a los desarrolladores crear interfaces de usuario
+dinamicamente y que se adaptaban a los tamaños de la pantalla.
+
+Antiguamente no utilizaba ninguna libreria para crear interfaces, incluso
+una aplicacion de consola o menu interactivo lo desarrollaba manualmente.
+
+## ¿Cómo funciona Bubbletea?
+Bubbletea esta inspirado en el modelo (MVU) de la arquitectura de
+aplicaciones, este patrón arquitectonico popularizado por [The Elm Architecture](https://elm-lang.org/).
+
+El patrón MVU se compone de 3 partes:
+
+- Model: Representa el estado de la aplicacion.
+- View: Representa la interfaz de usuario de la aplicacion.
+- Update: Representa la logica de la aplicacion.
+
+### Arquitectura interna: <kbd>tea.Model</kbd>
+Este vendria siendo el núcleo de tu aplicación, aqui se define el estado de la
+aplicacion y la logica de la aplicacion y define lo siguiente:
+
+- El estado actual de la aplicacion.
+- Como se actualiza el estado de la aplicacion.
+- Como se renderiza la interfaz de usuario de la aplicacion.
+
+Implementa **tres metodos** principales:
+
+```go title="explain.go" startLine=5
+type Model interface {
+  Init() tea.Cmd
+  Update(msg tea.Msg) (tea.Model, tea.Cmd)
+  View() string
+}
+```
+
+El metodo **Init** se utiliza para inicializar el estado de la aplicacion y
+devuelve un comando. El metodo **Update** se utiliza para actualizar el estado
+de la aplicacion y devuelve un comando. El metodo **View** se utiliza para
+renderizar la interfaz de usuario de la aplicacion y devuelve un string.
+
+### Arquitectura externa: <kbd>tea.Program</kbd>
+Este vendria siendo el núcleo de tu aplicación, aqui se define el estado de la
+aplicacion y la logica de la aplicacion y define lo siguiente:
+
+- El estado actual de la aplicacion.
+- Como se actualiza el estado de la aplicacion.
+
+### En resumen
+Me encanta Bubbletea y lo recomiendo a todos los desarrolladores de software que
+quieren crear interfaces de usuario.
+
+### Enlaces de interes
+
+- [Bubbletea](https://github.com/charmbracelet/bubbletea)
+- [The Elm Architecture](https://elm-lang.org/)
+- [The Elm Architecture: A Practical Guide](https://www.elm-lang.org/learn/architecture)

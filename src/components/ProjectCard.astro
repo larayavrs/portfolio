@@ -38,6 +38,11 @@ const { project } = Astro.props;
       <p class="text-muted-foreground mb-2 text-sm">
         {project.data.description}
       </p>
+      <div
+        class="text-muted-foreground mb-2 flex flex-wrap items-center gap-x-2 text-xs"
+      >
+        <span>{project.data.tags?.join(" - ")}</span>
+      </div>
     </div>
   </Link>
 </div>
