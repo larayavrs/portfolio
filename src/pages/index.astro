@@ -1,6 +1,7 @@
 ---
 import PageHeading from "@/components/PageHeading.astro";
 import TechStack from "@/components/TechStack.astro";
+import { Separator } from "@/components/ui/separator";
 import { website } from "@/constants/constants";
 import { getRecentPosts } from "@/lib/data";
 import Layout from "../layouts/Layout.astro";
@@ -14,22 +15,23 @@ const posts = await getRecentPosts(website.howManyFeaturedPosts);
     <div>
       <div class="flex flex-col space-y-1.5 p-6">
         <h3 class="font-mono text-2xl leading-none">
-          &commat;{website.author}
+          {website.fullname}
         </h3>
         <p class="text-muted-foreground text-sm">
-          {website.fullname} &bull; <span class="font-medium"
+          {website.author} &bull; <span class="font-medium"
             >Desarrollador Software Independiente</span
           >
         </p>
       </div>
       <div class="p-6 pt-0">
         <p class="text-muted-foreground mb-2 text-sm">
-          Bienvenido/a a mi portafolio personal. Aquí encontrarás una selección
-          de mis proyectos y trabajos más destacados. Mi objetivo es mostrarte
-          mis habilidades y experiencia en el desarrollo de software, así como
-          mi pasión por la tecnología y la innovación.
+          Desarrollador Software Freelance con propósitos de innovación,
+          creación y soluciones tecnológicas para distintos sistemas,
+          proporcionando adaptabilidad, escalabilidad y necesidades de clientes
+          y empresas.
         </p>
       </div>
+      <Separator />
     </div>
   </section>
   <section class="flex flex-col gap-y-6">
