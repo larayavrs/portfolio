@@ -14,7 +14,7 @@ export const website: Website = {
 export const navigation: SocialHref[] = [
   {
     href: "/post",
-    label: "posts",
+    label: "articulos",
   },
   {
     href: "/projects",
@@ -22,7 +22,7 @@ export const navigation: SocialHref[] = [
   },
   {
     href: "/contact",
-    label: "Contacto",
+    label: "contacto",
   },
 ];
 
