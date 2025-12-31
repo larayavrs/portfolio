@@ -1,12 +1,9 @@
 ---
 import PageHeading from "@/components/PageHeading.astro";
-import TechStack from "@/components/TechStack.astro";
+import Skills from "@/components/Skills.astro";
 import { Separator } from "@/components/ui/separator";
 import { website } from "@/constants/constants";
-import { getRecentPosts } from "@/lib/data";
 import Layout from "../layouts/Layout.astro";
-
-const posts = await getRecentPosts(website.howManyFeaturedPosts);
 ---
 
 <Layout>
@@ -34,7 +31,7 @@ const posts = await getRecentPosts(website.howManyFeaturedPosts);
       <Separator />
     </div>
   </section>
-  <section class="flex flex-col gap-y-6">
-    <TechStack />
+  <section class="flex flex-col gap-y-2">
+    <Skills />
   </section>
 </Layout>

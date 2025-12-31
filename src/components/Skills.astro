@@ -1,0 +1,122 @@
+---
+import {
+  BACKEND_TECH,
+  DATABASE_TECH,
+  FRONTEND_TECH,
+  PROGRAMMING_LANGUAGES,
+  TOOL_TECH,
+} from "@/constants/tech-stack";
+---
+
+<div class="my-6 sm:my-8">
+  <h2 class="mb-5 font-medium text-neutral-400 dark:text-neutral-500">
+    Habilidades
+  </h2>
+  <div class="space-y-6">
+    <dl class="flex flex-col gap-1 sm:flex-row">
+      <dt class="min-w-40">
+        <span class="mb-4 block text-sm text-neutral-400 dark:text-neutral-500">
+          Backend
+        </span>
+      </dt>
+      <dt class="flex flex-wrap gap-x-3">
+        {
+          BACKEND_TECH.map((tech) => (
+            <div>
+              {tech.icon && (
+                <span class="flex size-4 items-center justify-center">
+                  <tech.icon className="size-4" />
+                </span>
+              )}
+              <span class="truncate font-mono text-xs">{tech.label}</span>
+            </div>
+          ))
+        }
+      </dt>
+    </dl>
+    <dl class="flex flex-col gap-1 sm:flex-row">
+      <dt class="min-w-40">
+        <span class="mb-4 block text-sm text-neutral-400 dark:text-neutral-500">
+          Frontend
+        </span>
+      </dt>
+      <dt class="flex flex-wrap gap-x-3">
+        {
+          FRONTEND_TECH.map((tech) => (
+            <div>
+              {tech.icon && (
+                <span class="flex size-4 items-center justify-center">
+                  <tech.icon className="size-4" />
+                </span>
+              )}
+              <span class="truncate font-mono text-xs">{tech.label}</span>
+            </div>
+          ))
+        }
+      </dt>
+    </dl>
+    <dl class="flex flex-col gap-1 sm:flex-row">
+      <dt class="min-w-40">
+        <span class="mb-4 block text-sm text-neutral-400 dark:text-neutral-500">
+          Manejo de datos
+        </span>
+      </dt>
+      <dt class="flex flex-wrap gap-x-3">
+        {
+          DATABASE_TECH.map((tech) => (
+            <div>
+              {tech.icon && (
+                <span class="flex size-4 items-center justify-center">
+                  <tech.icon className="size-4" />
+                </span>
+              )}
+              <span class="truncate font-mono text-xs">{tech.label}</span>
+            </div>
+          ))
+        }
+      </dt>
+    </dl>
+    <dl class="flex flex-col gap-1 sm:flex-row">
+      <dt class="min-w-40">
+        <span class="mb-4 block text-sm text-neutral-400 dark:text-neutral-500">
+          Herramientas
+        </span>
+      </dt>
+      <dt class="flex flex-wrap gap-x-3">
+        {
+          TOOL_TECH.map((tech) => (
+            <div>
+              {tech.icon && (
+                <span class="flex size-4 items-center justify-center">
+                  <tech.icon className="size-4" />
+                </span>
+              )}
+              <span class="truncate font-mono text-xs">{tech.label}</span>
+            </div>
+          ))
+        }
+      </dt>
+    </dl>
+    <dl class="flex flex-col gap-1 sm:flex-row">
+      <dt class="min-w-40">
+        <span class="mb-4 block text-sm text-neutral-400 dark:text-neutral-500">
+          Lenguajes
+        </span>
+      </dt>
+      <dt class="flex flex-wrap gap-x-3">
+        {
+          PROGRAMMING_LANGUAGES.map((tech) => (
+            <div>
+              {tech.icon && (
+                <span class="flex size-4 items-center justify-center">
+                  <tech.icon className="size-4" />
+                </span>
+              )}
+              <span class="truncate font-mono text-xs">{tech.label}</span>
+            </div>
+          ))
+        }
+      </dt>
+    </dl>
+  </div>
+</div>

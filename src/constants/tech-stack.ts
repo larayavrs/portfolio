@@ -8,115 +8,172 @@ import {
   JavaScript,
   Go,
 
-  // frameworks
+  // frontend
   React,
   NextJs,
   Astro,
   ViteJS,
   ShadcnUI,
+  HTML5,
+  CSS3,
+  ReactQuery,
+  ReactRouter,
+  Redux,
+  TailwindCSS,
 
   // backend
   ExpressJsLight,
   NodeJs,
   NestJS,
+  BunJs,
+  Swagger,
+  Appwrite,
+  Convex,
 
   // databases
   MySQL,
   PostgreSQL,
   MongoDB,
+  Prisma,
+  Supabase,
+  Oracle,
 
   // tools
   Git,
   Docker,
 } from "developer-icons";
 
-export const TECH_STACK = [
+export const BACKEND_TECH = [
   {
-    title: "Python",
-    icon: Python,
-  },
-  {
-    title: "C",
-    icon: C,
-  },
-  {
-    title: "C++",
-    icon: CPlusPlus,
-  },
-  {
-    title: "Rust",
-    icon: RustLight,
-  },
-  {
-    title: "TypeScript",
-    icon: TypeScript,
-  },
-  {
-    title: "JavaScript",
-    icon: JavaScript,
-  },
-  {
-    title: "Go",
-    icon: Go,
-  },
-
-  // frameworks
-  {
-    title: "React",
-    icon: React,
-  },
-  {
-    title: "Next.js",
-    icon: NextJs,
-  },
-  {
-    title: "Astro",
-    icon: Astro,
-  },
-  {
-    title: "Vite.js",
-    icon: ViteJS,
-  },
-  {
-    title: "Shadcn UI",
-    icon: ShadcnUI,
-  },
-
-  // backend
-  {
-    title: "Express.js",
-    icon: ExpressJsLight,
-  },
-  {
-    title: "Node.js",
+    label: "Node.js",
     icon: NodeJs,
   },
   {
-    title: "Nest.js",
+    label: "Nest.js",
     icon: NestJS,
   },
-
-  // databases
   {
-    title: "MySQL",
+    label: "Express.js",
+    icon: ExpressJsLight,
+  },
+  {
+    label: "Bun.js",
+    icon: BunJs,
+  },
+  {
+    label: "Swagger",
+    icon: Swagger,
+  },
+  {
+    label: "Appwrite",
+    icon: Appwrite,
+  },
+  {
+    label: "Convex",
+    icon: Convex,
+  },
+];
+
+export const FRONTEND_TECH = [
+  {
+    label: "React",
+    icon: React,
+  },
+  {
+    label: "Next.js",
+    icon: NextJs,
+  },
+  {
+    label: "Astro",
+    icon: Astro,
+  },
+  {
+    label: "Vite.js",
+    icon: ViteJS,
+  },
+  {
+    label: "Shadcn UI",
+    icon: ShadcnUI,
+  },
+  {
+    label: "React Query",
+    icon: ReactQuery,
+  },
+  {
+    label: "React Router",
+    icon: ReactRouter,
+  },
+  {
+    label: "Tailwind",
+    icon: TailwindCSS,
+  },
+];
+
+export const DATABASE_TECH = [
+  {
+    label: "MySQL",
     icon: MySQL,
   },
   {
-    title: "PostgreSQL",
+    label: "PostgreSQL",
     icon: PostgreSQL,
   },
   {
-    title: "MongoDB",
+    label: "MongoDB",
     icon: MongoDB,
   },
-
-  // tools
   {
-    title: "Git",
+    label: "Prisma",
+    icon: Prisma,
+  },
+  {
+    label: "Supabase",
+    icon: Supabase,
+  },
+  {
+    label: "Oracle",
+    icon: Oracle,
+  },
+];
+
+export const TOOL_TECH = [
+  {
+    label: "Git",
     icon: Git,
   },
   {
-    title: "Docker",
+    label: "Docker",
     icon: Docker,
+  },
+];
+
+export const PROGRAMMING_LANGUAGES = [
+  {
+    label: "Python",
+    icon: Python,
+  },
+  {
+    label: "TypeScript",
+    icon: TypeScript,
+  },
+  {
+    label: "JavaScript",
+    icon: JavaScript,
+  },
+  {
+    label: "Rust",
+    icon: RustLight,
+  },
+  {
+    label: "C",
+    icon: C,
+  },
+  {
+    label: "C++",
+    icon: CPlusPlus,
+  },
+  {
+    label: "Go",
+    icon: Go,
   },
 ];
