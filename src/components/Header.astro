@@ -1,6 +1,5 @@
 ---
 import Link from "@/components/Link.astro";
-import ThemeSwitch from "@/components/ThemeSwitch.astro";
 import MobileMenu from "@/components/ui/mobile-menu";
 import { navigation, website } from "@/constants/constants";
 import { Image } from "astro:assets";
@@ -33,7 +32,6 @@ import logo from "../../public/static/logo.png";
         }
       </nav>
       <MobileMenu client:load transition:persist />
-      <ThemeSwitch transition:persist />
     </div>
   </div>
 </header>

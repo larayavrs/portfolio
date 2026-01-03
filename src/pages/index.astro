@@ -2,6 +2,7 @@
 import PageHeading from "@/components/PageHeading.astro";
 import Skills from "@/components/Skills.astro";
 import { Separator } from "@/components/ui/separator";
+import WorkExperience from "@/components/WorkExperience.astro";
 import { website } from "@/constants/constants";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -33,5 +34,7 @@ import Layout from "../layouts/Layout.astro";
   </section>
   <section class="flex flex-col gap-y-2">
     <Skills />
+    <Separator />
+    <WorkExperience />
   </section>
 </Layout>

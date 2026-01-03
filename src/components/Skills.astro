@@ -9,20 +9,16 @@ import {
 ---
 
 <div class="my-6 sm:my-8">
-  <h2 class="mb-5 text-xl font-medium text-neutral-400 dark:text-neutral-500">
-    Habilidades
-  </h2>
+  <h2 class="mb-5 text-xl font-medium text-neutral-600">Habilidades</h2>
   <div class="space-y-6">
     <dl class="flex flex-col gap-1 sm:flex-row">
       <dt class="min-w-40">
-        <span class="mb-4 block text-sm text-neutral-400 dark:text-neutral-500">
-          Backend
-        </span>
+        <span class="mb-4 block text-sm text-neutral-600"> Backend </span>
       </dt>
-      <dt class="flex flex-wrap gap-x-3">
+      <dt class="flex flex-wrap gap-x-3 gap-y-2">
         {
           BACKEND_TECH.map((tech) => (
-            <div>
+            <div class="bg-background flex flex-wrap gap-x-2 rounded-sm border p-2 sm:p-1">
               {tech.icon && (
                 <span class="flex size-4 items-center justify-center">
                   <tech.icon className="size-4" />
@@ -36,14 +32,12 @@ import {
     </dl>
     <dl class="flex flex-col gap-1 sm:flex-row">
       <dt class="min-w-40">
-        <span class="mb-4 block text-sm text-neutral-400 dark:text-neutral-500">
-          Frontend
-        </span>
+        <span class="mb-4 block text-sm text-neutral-600"> Frontend </span>
       </dt>
-      <dt class="flex flex-wrap gap-x-3">
+      <dt class="flex flex-wrap gap-x-3 gap-y-2">
         {
           FRONTEND_TECH.map((tech) => (
-            <div>
+            <div class="bg-background flex flex-wrap gap-x-2 rounded-sm border p-2 sm:p-1">
               {tech.icon && (
                 <span class="flex size-4 items-center justify-center">
                   <tech.icon className="size-4" />
@@ -57,14 +51,14 @@ import {
     </dl>
     <dl class="flex flex-col gap-1 sm:flex-row">
       <dt class="min-w-40">
-        <span class="mb-4 block text-sm text-neutral-400 dark:text-neutral-500">
+        <span class="mb-4 block text-sm text-neutral-600">
           Manejo de datos
         </span>
       </dt>
-      <dt class="flex flex-wrap gap-x-3">
+      <dt class="flex flex-wrap gap-x-3 gap-y-2">
         {
           DATABASE_TECH.map((tech) => (
-            <div>
+            <div class="bg-background flex flex-wrap gap-x-2 rounded-sm border p-2">
               {tech.icon && (
                 <span class="flex size-4 items-center justify-center">
                   <tech.icon className="size-4" />
@@ -78,14 +72,12 @@ import {
     </dl>
     <dl class="flex flex-col gap-1 sm:flex-row">
       <dt class="min-w-40">
-        <span class="mb-4 block text-sm text-neutral-400 dark:text-neutral-500">
-          Herramientas
-        </span>
+        <span class="mb-4 block text-sm text-neutral-600"> Herramientas </span>
       </dt>
-      <dt class="flex flex-wrap gap-x-3">
+      <dt class="flex flex-wrap gap-x-3 gap-y-2">
         {
           TOOL_TECH.map((tech) => (
-            <div>
+            <div class="bg-background flex flex-wrap gap-x-2 rounded-sm border p-2 sm:p-1">
               {tech.icon && (
                 <span class="flex size-4 items-center justify-center">
                   <tech.icon className="size-4" />
@@ -99,14 +91,12 @@ import {
     </dl>
     <dl class="flex flex-col gap-1 sm:flex-row">
       <dt class="min-w-40">
-        <span class="mb-4 block text-sm text-neutral-400 dark:text-neutral-500">
-          Lenguajes
-        </span>
+        <span class="mb-4 block text-sm text-neutral-600"> Lenguajes </span>
       </dt>
-      <dt class="flex flex-wrap gap-x-3">
+      <dt class="flex flex-wrap gap-x-3 gap-y-2">
         {
           PROGRAMMING_LANGUAGES.map((tech) => (
-            <div>
+            <div class="bg-background flex flex-wrap gap-x-2 rounded-sm border p-2 sm:p-1">
               {tech.icon && (
                 <span class="flex size-4 items-center justify-center">
                   <tech.icon className="size-4" />

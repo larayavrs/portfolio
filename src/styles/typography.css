@@ -21,7 +21,7 @@
   }
 
   p {
-    @apply text-pretty;
+    @apply text-pretty text-base;
   }
 }
 
@@ -90,7 +90,7 @@
 
     /* this is the shiki highlighter and code blocks */
     :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-      @apply bg-muted/50 text-foreground relative rounded-md px-[0.6rem] py-[0.8rem] text-sm font-medium break-words;
+      @apply bg-muted/50 text-foreground relative rounded-md px-[0.6rem] py-[0.2rem] text-sm font-medium break-words;
       @apply [&>span[data-line='']>*]:text-(--shiki-light) dark:[&>span[data-line='']>*]:text-(--shiki-dark);
     }
 

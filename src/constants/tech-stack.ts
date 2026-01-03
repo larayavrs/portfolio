@@ -3,7 +3,7 @@ import {
   Python,
   C,
   CPlusPlus,
-  RustLight,
+  RustDark,
   TypeScript,
   JavaScript,
   Go,
@@ -14,15 +14,12 @@ import {
   Astro,
   ViteJS,
   ShadcnUI,
-  HTML5,
-  CSS3,
   ReactQuery,
   ReactRouter,
-  Redux,
   TailwindCSS,
 
   // backend
-  ExpressJsLight,
+  ExpressJsDark,
   NodeJs,
   NestJS,
   BunJs,
@@ -54,7 +51,7 @@ export const BACKEND_TECH = [
   },
   {
     label: "Express.js",
-    icon: ExpressJsLight,
+    icon: ExpressJsDark,
   },
   {
     label: "Bun.js",
@@ -162,7 +159,7 @@ export const PROGRAMMING_LANGUAGES = [
   },
   {
     label: "Rust",
-    icon: RustLight,
+    icon: RustDark,
   },
   {
     label: "C",
