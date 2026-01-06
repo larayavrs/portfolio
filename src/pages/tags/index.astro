@@ -8,6 +8,8 @@ import { getSortedTags } from "@/lib/data";
 import { Icon } from "astro-icon/components";
 
 const sortedTags = await getSortedTags();
+// filter "novedades" tag to make it with different color
+const newsTag = sortedTags.find((tag) => tag.tag === "novedades");
 ---
 
 <Layout class="max-w-3xl">
@@ -20,10 +22,13 @@ const sortedTags = await getSortedTags();
         sortedTags.map(({ tag, count }) => (
           <Link
             href={`/tags/${tag}`}
-            class={badgeVariants({ variant: "secondary" })}
+            class={badgeVariants({
+              variant: tag === newsTag?.tag ? "special" : "secondary",
+            })}
           >
-            <Icon name="lucide:tag" class="size-4" />
+            <Icon name="lucide:hash" class="size-4" />
             {tag}
+            {tag === newsTag?.tag && <Icon name="lucide:star" class="size-4" />}
             <span class="text-muted-foreground ml-1">{count}</span>
           </Link>
         ))
