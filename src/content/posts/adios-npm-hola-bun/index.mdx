@@ -1,0 +1,149 @@
+---
+title: 'Bun: Mi nuevo package manager favorito'
+description: 'Abandoné npm, ahora uso bun para mis proyectos personales y profesionales'
+date: 2026-01-07
+image: './adios-npm-hola-bun.png'
+tags: ['desarrollo-web', 'backend', 'frontend']
+authors: ['larayavrs']
+---
+
+import Callout from "@/components/mdx/Callout.astro";
+
+## ¿Por qué abandoné npm?
+
+Durante años usé **NPM** sin cuestionarlo. Era el estándar, venía con Node.js y “simplemente funcionaba”. Pero con el tiempo, 
+y especialmente en proyectos medianos y grandes, empecé a notar algo claro: NPM se volvió un cuello de botella.
+
+Hoy, si empiezo un proyecto nuevo, mi elección ya no es NPM. Yo usaría Bun.js. Y no por hype, 
+sino por razones técnicas, medibles y prácticas.
+
+## El problema real con NPM
+La verdad que **NPM** no es malo en realidad, pero **arrastra decisiones viejas** que hoy pesan demasiado.
+
+### Instalaciones lentas
+Y si, siguen siendo lentas, en proyectos reales:
+
+* El comando `npm install` se hace lento y puede tardar varios minutos.
+* Reinstalar dependencias en CI es doloroso, porque hay que esperar a que todo se instale.
+* `node_modules` puede pesar cientos de megabytes.
+
+<Callout title="NPM es lento" variant="lema">
+  Aunque NPM ha mejorado, su arquitectura sigue siendo:
+  * JavaScript puro.
+  * Resolución de dependencias costosa.
+  * I/O poco eficiente.
+
+  Yo creo que, en 2026, eso ya no es aceptable.
+</Callout>
+
+### `node_modules` es un desastre estructural
+Vamos a ser completamente honestos, esto tiene lo siguiente:
+
+* Hay arboles de dependencias profundos.
+* Duplicación de dependencias.
+* Paths completamente absurdos.
+* Problemas de sistema operativo como Windows.
+* Difícil de hacer _caching_ de manera correcta.
+
+NPM normalizó un **workaround**, no una solución elegante.
+
+### Scripts lentos y tooling inconsistente
+Cuando por ejemplo, ejecutamos:
+
+```bash
+npm run build
+```
+
+Y esto implica, lo siguiente:
+- Spawn de procesos.
+- Overhead innecesario.
+- Dependencia de herramientas externas: `cross-env`, `rimraf`, etc.
+
+## Motivos por los cuales usaré Bun
+Bun no intenta solucionar o parchar NPM, lo **reemplaza**.
+
+### 1. Rendimiento real y eficiente
+Bun está escrito en [Zig](https://ziglang.org/) y no en JavaScript, eso lo hace
+mucho mas rapido y también proporciona un excelente rendimiento.
+
+Eso se traduce a datos reales, como:
+
+* El comando `bun install` se hace muy rápido en un 10-30%.
+* Resolución de dependencias optimizadas.
+* Uso eficiente de memoria.
+* Cacheo agresivo y automatico.
+
+En proyectos de grande escala, la diferencia **se siente inmediata**.
+
+### 2. Un solo binario, todo incluido
+Cuando uso Bun, yo tengo lo siguiente:
+
+* Un buen runtime.
+* Package manager.
+* Bundler.
+* Un test runner decente.
+
+Lo que significa que:
+
+- Menos dependencias globales y menos confusión.
+- Menos tooling externo.
+- Menos configuraciones duplicadas.
+- Menos puntos de fallo.
+
+### 3. Compatabilidad con ecosistema Node
+Bun no tiene ninguna limitación de compatibilidad con Node.js.
+
+- Usa `package.json` y `node_modules` como sistema de gestión de dependencias.
+- Soporta la mayoría de APIs de Node.js.
+- Ejecuta paquetes existentes que no tengan un cambio.
+
+No estoy apostando por un mundo paralelo, pero estoy usando el mismo
+ecosistema, pero con un motor mejorado y un enfoque diferente.
+
+### 4. TypeScript nativo.
+No hay necesidad de configurar un _compiler_ o un _transpiler_, porque viene
+integrado con TypeScript, es el ciudadano de primera clase.
+
+```bash
+bun run index.ts
+```
+
+- No necesitas `tsc --watch` ni `ts-node`.
+- Ni tampoco configuraciones duplicadas.
+- Al igual que toolchains innecesarios.
+
+### 5. Test rápidos y simples
+Bun trae su propio test runner, funciona de esta manera:
+
+```ts title="test.ts" ins={1}
+import { test, expect } from "bun:test";
+
+// esto es un test de ejemplo
+test("hello world", () => {
+  expect(1 + 1).toBe(2);
+});
+```
+
+Y eso se traduce a:
+
+- Arranque instantaneo.
+- Sintaxis simple.
+- Sin configuraciones extrañas.
+
+En algun proyecto pequeño o mediano, reemplaza a **Jest** sin ningún problema.
+
+## Conclusión
+NPM cumplió su rol. Fue clave para el crecimiento de JavaScript, pero hoy es:
+
+- Es lento
+- Es pesado
+- Es ruidoso
+
+Está limitado por su historia.
+
+Bun representa cómo debería sentirse el desarrollo moderno: rápido, simple, integrado y eficiente.
+
+> “¿NPM o Bun?”
+>
+> Yo abandonaría NPM y usaría Bun.js.
+> No por moda, sino por productividad real.

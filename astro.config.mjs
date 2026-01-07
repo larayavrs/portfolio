@@ -12,6 +12,7 @@ import rehypeKatex from "rehype-katex";
 import remarkEmoji from "remark-emoji";
 import remarkMath from "remark-math";
 
+import { pluginFileIcons } from "@xt0rted/expressive-code-file-icons";
 import { pluginCollapsibleSections } from "@expressive-code/plugin-collapsible-sections";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 
@@ -22,7 +23,11 @@ export default defineConfig({
   integrations: [
     expressiveCode({
       themes: ["catppuccin-latte", "github-dark"],
-      plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
+      plugins: [
+        pluginCollapsibleSections(),
+        pluginLineNumbers(),
+        // pluginFileIcons(),
+      ],
       useDarkModeMediaQuery: false,
       themeCssSelector: (theme) => `[data-theme="${theme.name.split("-")[1]}"]`,
       defaultProps: {

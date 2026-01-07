@@ -27,7 +27,7 @@ const { Content, headings } = await render(post);
 const { next, prev } = await getAdjacentPosts(currentPostId);
 ---
 
-<Layout isWide>
+<Layout class="max-w-8xl">
   <PostHeading slot="head" post={post} />
   <section
     class="grid grid-cols-[minmax(0px,1fr)_min(calc(var(--breakpoint-md)-2rem),100%)_minmax(0px,1fr)] gap-y-6"
